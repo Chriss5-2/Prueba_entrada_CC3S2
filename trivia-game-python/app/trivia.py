@@ -36,15 +36,21 @@ class Quiz:
 
 def run_quiz():
     quiz = Quiz()
-    question1 = Question("¿Cuánto es 35x6?", ["180", "210", "240", "220"], "2")
-    question2 = Question("¿Cuál es la capital de Austria?", ["Lima", "Viena", "Bruselas", "Dhaka"], "2")
-    question3 = Question("¿De qué colores es la bandera de Japón?",["Blanca y roja", "Azul y amarillo", "Celeste, blanco y amarillo", "Negro, amarillo y rojo"],"1")
-    question4 = Question("¿Qué juego ganó el GOTY el año 2024?", ["God Of War Ragnarok", "Ghost of Tsushima", "Astro Bot", "The last of us II"], "3")
-    #Add questions
-    quiz.add_question(question1)
-    quiz.add_question(question2)
-    quiz.add_question(question3)
-    quiz.add_question(question4)
+    questions = [Question("¿Cuánto es 35x6?", ["180", "210", "240", "220"], "2"), # Question 1
+    Question("¿Cuál es la capital de Austria?", ["Lima", "Viena", "Bruselas", "Dhaka"], "2"), # Question 2
+    Question("¿De qué colores es la bandera de Japón?",["Blanca y roja", "Azul y amarillo", "Celeste, blanco y amarillo", "Negro, amarillo y rojo"],"1"), # Question 3
+    Question("¿Qué juego ganó el GOTY el año 2024?", ["God Of War Ragnarok", "Ghost of Tsushima", "Astro Bot", "The last of us II"], "3"), # Question 4
+    Question("¿Quién escribió el Caballero Carmelo?", ["Cesar Acuña", "Mario Vargas Llosa", "Abraham Valdemolar", "Ciro Alegria"], "3"), # Question 5
+    Question("¿Qué canción NO es de Juan Gabriel?", ["Así fue", "Hasta que te conocí", "Porque me haces llorar", "Waka Waka"], "4"), # Question 6
+    Question("¿Cuál es un color primario", ["Verde", "Rojo", "Blanco", "Morado"], "2"), # Question 7
+    Question("¿Qué palabra NO tiene tres sílabas", ["Recuerda", "Cabello", "Héroe", "Aumento"], "3"), # Question 8
+    Question("¿Qué año se fundó la Universidad Nacional de Ingeniería (UNI)?", ["1876", "1856", "1866", "NA"], "1"), # Question 9
+    Question("¿Qué profesor enseña Desarrollo de Software en el periodo 2025-1 en la UNI?", ["Pablo Lopez", "Marco Alania", "Yuri Ccoica", "Cesar Lara"], "4")] # Question 10
+    #Add questions one by one
+    #quiz.add_question(question1) quiz.add_question(question2) quiz.add_question(question3) quiz.add_question(question4)
+    #Add all questions at the same time
+    for q in questions:
+        quiz.add_question(q)
     #Create question
     question = quiz.get_next_question()
     #Show questions
@@ -53,7 +59,7 @@ def run_quiz():
         print(question.description)
         for i, option in enumerate(question.options,1):
             print(str(i)+") "+option) #Use str(i) because i is an integer variable and question is a string variable
-        answer = str(input("Ingrese la alternativa correcta: "))
+        answer = input("Ingrese la alternativa correcta: ")
         #Choose a alternative of the range
         while answer not in ["1","2","3","4"]:
             #Choose another alternative if the answer is out the range or if is None
@@ -62,12 +68,12 @@ def run_quiz():
             for i, option in enumerate(question.options,1):
                 print(str(i)+") "+option)
             print(question.description)
-            answer = str(input("Ingrese la alternativa correcta: "))
+            answer = input("Ingrese la alternativa correcta: ")
         #Correct Answer
-        if answer == question.correct_answer:
+        if answer_question(question, answer):
             print("Correct Answer!!!! Congratulations :D")
         #Incorrect Answer
-        elif answer != question.correct_answer:
+        elif not answer_question(question, answer):
             print("Incorrect Answer ;( The correct answer is the alternative "+question.correct_answer)
 
         question = quiz.get_next_question()
