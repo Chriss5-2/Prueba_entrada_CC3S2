@@ -25,5 +25,5 @@ def test_quiz_scoring():
     quiz = Quiz()
     question = Question("¿Qué juego ganó el GOTY el año 2024?", ["Astro Bot", "God of War Ragnarok", "The Last of Us 2", "Ghost of Tsushima"], "1")
     quiz.add_question(question)
-    assert quiz.asnwer_question(question, "1") == True
+    assert quiz.answer_question(question, "1") == True
     assert quiz.correct_answers == 1
