@@ -72,5 +72,6 @@ def run_quiz():
 
         question = quiz.get_next_question()
 
-run_quiz()
+if __name__ == "__main__":
+    run_quiz()
 
