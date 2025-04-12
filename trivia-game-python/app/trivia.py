@@ -70,13 +70,18 @@ def run_quiz():
             print(question.description)
             answer = input("Ingrese la alternativa correcta: ")
         #Correct Answer
-        if answer_question(question, answer):
+        if quiz.answer_question(question, answer):
             print("Correct Answer!!!! Congratulations :D")
         #Incorrect Answer
-        elif not answer_question(question, answer):
+        elif not quiz.answer_question(question, answer):
             print("Incorrect Answer ;( The correct answer is the alternative "+question.correct_answer)
 
         question = quiz.get_next_question()
+    print("---------------------------------------------")
+    print("Juego terminado")
+    print("Puntuacion: ")
+    print("- " + str(quiz.correct_answers) + " preguntas correctas")
+    print("- " + str(quiz.incorrect_answers) + " preguntas incorrectas")
 
 if __name__ == "__main__":
     run_quiz()
