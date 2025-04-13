@@ -32,9 +32,9 @@ class Quiz:
         return None
 
     def get_question_by_level(self, level):
-        index = randin(0,len(self.questions))
-        while questions[index].level != level:
-            index = randin(0,len(self.questions))
+        index = randint(0,len(self.questions)-1)
+        while self.questions[index].level != level:
+            index = randint(0,len(self.questions)-1)
         question = self.questions[index]
         return question
 
@@ -46,36 +46,38 @@ class Quiz:
             self.incorrect_answers+=1
             return False
 
-    def get_question_level(self, question)
+    def get_question_level(self, question):
         return question.level
 
 def run_quiz():
     Rendimiento = 0
     num_preguntas = 0
-    puntos = 0
+    first_time_level_2 = 0
+    first_time_level_3=0
+    puntaje = 0
     level = 1
     print("Bienvenido al juego de Trivia!")
-    print("Responde las siguientes preguntas seleccionando el número de la opción correcta")
+    print("Responde las siguientes preguntas seleccionando el número de la opción correcta \n")
 
     quiz = Quiz()
 # REPOSITORIOS DE PREGUNTAS
     # Preguntas de dificultad 1
-    questions = [Question("¿Cuál es el planeta más cercano al Sol", ["Mercurio", "Marte", "Tierra", "Jupiter"], "1", 1), # Question 1
+    questions = [Question("¿Cuál es el planeta más cercano al Sol?", ["Mercurio", "Marte", "Tierra", "Jupiter"], "1", 1), # Question 1
     Question("¿Cuántas patas tiene una araña?", ["6", "9", "8", "7"], "3", 1), # Question 2
     Question("¿Qué día se celebra la Navidad?", ["31 de diciembre", "25 de diciembre", "1 de enero", "24 de noviembre"], "2", 1), # Question 3
-    Question("¿Qué juego ganó el GOTY el año 2024?", ["God Of War Ragnarok", "Ghost of Tsushima", "Astro Bot", "The last of us II"], "3", 1), # Question 4
+    Question("¿Cuál es el océano más grande del mundo?", ["Atlántico", "Índico", "Ártico", "Pacífico"], "4", 1), # Question 4
     Question("¿Cuántos dedos tiene una mano humana?", ["Cinco", "Cuatro", "Diez", "Seis"], "1", 1), # Question 5
     Question("¿Qué canción NO es de Juan Gabriel?", ["Así fue", "Hasta que te conocí", "Porque me haces llorar", "Waka Waka"], "4", 1), # Question 6
-    Question("¿Cuál es un color primario", ["Verde", "Rojo", "Blanco", "Morado"], "2", 1), # Question 7
+    Question("¿Cuál es un color primario?", ["Verde", "Rojo", "Blanco", "Morado"], "2", 1), # Question 7
     Question("¿Qué animal hace 'miau'?", ["Perro", "Vaca", "Gato", "Pájaro"], "3", 1), # Question 8
-    Question("¿Qué fruta es amarilla por fuera y blanca por dentro?", ["Manzana", "Plátano", "Pera", "Papaya"], "2", 1) # Question 9
-    Question("¿En qué país está la Torre Eiffel?", ["España", "Italia", "Francia", "Alemania"], "3", 1) # Question 10
+    Question("¿Qué fruta es amarilla por fuera y blanca por dentro?", ["Manzana", "Plátano", "Pera", "Papaya"], "2", 1), # Question 9
+    Question("¿En qué país está la Torre Eiffel?", ["España", "Italia", "Francia", "Alemania"], "3", 1), # Question 10
     # Preguntas de dificultad 2
     Question("¿Cuál es la capital de Austria?", ["Lima", "Viena", "Bruselas", "Dhaka"], "2", 2),
-    Question("¿Qué palabra NO tiene tres sílabas", ["Recuerda", "Cabello", "Héroe", "Aumento"], "3", 2),
+    Question("¿Qué palabra NO tiene tres sílabas?", ["Recuerda", "Cabello", "Héroe", "Aumento"], "3", 2),
     Question("¿Qué año se fundó la Universidad Nacional de Ingeniería (UNI)?", ["1876", "1856", "1866", "NA"], "1", 2),
-    Question("¿Quién escribió 'Cien años de soledad'?", ["Pablo Neruda", "Gabriel García Márquez", "Mario Vargas Llosa", "Julio Cortázar"], "2", 2)
-    Question("¿Cuál es la capital de Japón?", ["Pekín", "Tokio", "Seúl", "Bangkok"], "2", 2)
+    Question("¿Quién escribió 'Cien años de soledad'?", ["Pablo Neruda", "Gabriel García Márquez", "Mario Vargas Llosa", "Julio Cortázar"], "2", 2),
+    Question("¿Cuál es la capital de Japón?", ["Pekín", "Tokio", "Seúl", "Bangkok"], "2", 2),
     Question("¿Qué elemento químico tiene el símbolo Hg?", ["Helio", "Hidrógeno", "Hierro", "Mercurio"], "4", 2),
     Question("¿En qué continente está Egipto?", ["Asia", "Europa", "África", "Oceanía"], "3", 2),
     Question("¿Cuántos lados tiene un icoságono?", ["Veinte", "Diesciseis", "Veinticuatro", "Diez"], "1", 2),
@@ -90,7 +92,7 @@ def run_quiz():
     Question("¿Qué hueso protege el cerebro?", ["Fémur", "Columna", "Cráneo", "Húmero"], "3", 3),
     Question("¿En qué año se firmó la independencia de EE.UU.?", ["1776", "1492", "1810", "1865"], "1", 3),
     Question("¿Qué juego ganó el GOTY el año 2024?", ["God Of War Ragnarok", "Ghost of Tsushima", "Astro Bot", "The last of us II"], "3", 3),
-    Question("¿Cuánto es 2^(2^2)", ["64", "128", "16", "32"], "3", 3),
+    Question("¿Cuánto es 2^(2^2)?", ["64", "128", "16", "32"], "3", 3),
     Question("¿Quién pintó 'La noche estrellada'?", ["Claude Monet", "Vincent van Gogh", "Pablo Picasso", "Salvador Dalí"], "2", 3)]
     #Add questions one by one
     #quiz.add_question(question1) quiz.add_question(question2) quiz.add_question(question3) quiz.add_question(question4)
@@ -102,7 +104,7 @@ def run_quiz():
     while num_preguntas < 10: #question.current_question_index < 10:
         if num_preguntas > 0:
             print("---------------------------------------------")
-            print("Pregunta número "+str(num_preguntas+1)+" - Nivel "+level)
+            print("Pregunta número "+str(num_preguntas+1)+" - Nivel "+str(level))
         else:
             print("Pregunta número 1 - Nivel 1")
         question = quiz.get_question_by_level(level)
@@ -135,12 +137,18 @@ def run_quiz():
             print("Incorrect Answer ;( The correct answer is the alternative "+question.correct_answer)
             if puntaje > 0:
                 puntaje -= 1
-        num_preguntas++
+        num_preguntas+=1
         quiz.del_question(question)
-        if quiz.correct_answers > 6:
+        if quiz.correct_answers >= 6:
+            if first_time_level_3 == 0:
+                print("\n-----------------------------------\nFelicidades, pasarás al nivel 3\n")
             level = 3
-        elif quiz.correct_answers >= 3 and quiz.correct_answers <= 6:
+            first_time_level_3 += 1
+        elif quiz.correct_answers >= 3 and quiz.correct_answers < 6:
+            if first_time_level_2 == 0:
+                print("\n-----------------------------------\nFelicidades, pasaste al nivel 2\n")
             level = 2
+            first_time_level_2 += 1
         else:
             level = 1
 
