@@ -67,31 +67,31 @@ def run_quiz():
     Question("¿Cuántos dedos tiene una mano humana?", ["Cinco", "Cuatro", "Diez", "Seis"], "1", 1), # Question 5
     Question("¿Qué canción NO es de Juan Gabriel?", ["Así fue", "Hasta que te conocí", "Porque me haces llorar", "Waka Waka"], "4", 1), # Question 6
     Question("¿Cuál es un color primario", ["Verde", "Rojo", "Blanco", "Morado"], "2", 1), # Question 7
-    Question(), # Question 8
-    Question(), # Question 9
-    Question(), # Question 10
+    Question("¿Qué animal hace 'miau'?", ["Perro", "Vaca", "Gato", "Pájaro"], "3", 1), # Question 8
+    Question("¿Qué fruta es amarilla por fuera y blanca por dentro?", ["Manzana", "Plátano", "Pera", "Papaya"], "2", 1) # Question 9
+    Question("¿En qué país está la Torre Eiffel?", ["España", "Italia", "Francia", "Alemania"], "3", 1) # Question 10
     # Preguntas de dificultad 2
     Question("¿Cuál es la capital de Austria?", ["Lima", "Viena", "Bruselas", "Dhaka"], "2", 2),
     Question("¿Qué palabra NO tiene tres sílabas", ["Recuerda", "Cabello", "Héroe", "Aumento"], "3", 2),
     Question("¿Qué año se fundó la Universidad Nacional de Ingeniería (UNI)?", ["1876", "1856", "1866", "NA"], "1", 2),
-    Question(),
-    Question(),
-    Question(),
-    Question(),
-    Question(),
-    Question(),
-    Question(),
+    Question("¿Quién escribió 'Cien años de soledad'?", ["Pablo Neruda", "Gabriel García Márquez", "Mario Vargas Llosa", "Julio Cortázar"], "2", 2)
+    Question("¿Cuál es la capital de Japón?", ["Pekín", "Tokio", "Seúl", "Bangkok"], "2", 2)
+    Question("¿Qué elemento químico tiene el símbolo Hg?", ["Helio", "Hidrógeno", "Hierro", "Mercurio"], "4", 2),
+    Question("¿En qué continente está Egipto?", ["Asia", "Europa", "África", "Oceanía"], "3", 2),
+    Question("¿Cuántos lados tiene un icoságono?", ["Veinte", "Diesciseis", "Veinticuatro", "Diez"], "1", 2),
+    Question("¿Qué órgano del cuerpo humano bombea sangre?", ["Pulmón", "Hígado", "Riñón", "Corazón"], "4", 2),
+    Question("¿Cuál es el idioma más hablado del mundo?", ["Español", "Inglés", "Chino mandarín", "Hindi"], "3", 2),
     # Preguntas de dificultad 3
     Question("¿Quién escribió el Caballero Carmelo?", ["Cesar Acuña", "Mario Vargas Llosa", "Abraham Valdemolar", "Ciro Alegria"], "3", 3),
-    Question(),
-    Question(),
-    Question(),
-    Question(),
-    Question(),
-    Question(),
-    Question(),
-    Question(),
-    Question()]
+    Question("¿Cuál es el número atómico del oxígeno?", ["6", "7", "8", "9"], "3", 3),
+    Question("¿Qué obra escribió Miguel de Cervantes?", ["La Odisea", "Don Quijote de la Mancha", "Hamlet", "El Principito"], "2", 3),
+    Question("¿Qué filósofo dijo 'Solo sé que nada sé'?", ["Platón", "Aristóteles", "Descartes", "Sócrates"], "4", 3),
+    Question("¿Qué científico formuló la teoría de la relatividad?", ["Isaac Newton", "Galileo Galilei", "Albert Einstein", "Stephen Hawking"], "3", 3),
+    Question("¿Qué hueso protege el cerebro?", ["Fémur", "Columna", "Cráneo", "Húmero"], "3", 3),
+    Question("¿En qué año se firmó la independencia de EE.UU.?", ["1776", "1492", "1810", "1865"], "1", 3),
+    Question("¿Qué juego ganó el GOTY el año 2024?", ["God Of War Ragnarok", "Ghost of Tsushima", "Astro Bot", "The last of us II"], "3", 3),
+    Question("¿Cuánto es 2^(2^2)", ["64", "128", "16", "32"], "3", 3),
+    Question("¿Quién pintó 'La noche estrellada'?", ["Claude Monet", "Vincent van Gogh", "Pablo Picasso", "Salvador Dalí"], "2", 3)]
     #Add questions one by one
     #quiz.add_question(question1) quiz.add_question(question2) quiz.add_question(question3) quiz.add_question(question4)
     #Add all questions at the same time
