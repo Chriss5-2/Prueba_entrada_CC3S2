@@ -6,11 +6,11 @@ on:
       - main
       - develop
       - feature/dia6
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
       - name: Chechout code
         uses: actions/checkout@v2
 
@@ -28,3 +28,4 @@ jobs:
           args: > 
             -Dsonar.projectKey=trivia-game-python 
             -Dsonar.sources=.
+
