@@ -6,6 +6,7 @@ on:
       - main
       - develop
       - feature/dia6
+
 jobs:
   build:
     runs-on: ubuntu-latest
