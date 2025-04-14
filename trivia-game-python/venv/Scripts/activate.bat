@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set "VIRTUAL_ENV=C:\Users\CHRISTIAN\DS\trivia-game-python\venv"
+set "VIRTUAL_ENV=C:\Users\CHRISTIAN\DS\Prueba_entrada_CC3S2\trivia-game-python\venv"
 
 if not defined PROMPT set PROMPT=$P$G
 
