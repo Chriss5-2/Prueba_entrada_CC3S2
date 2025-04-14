@@ -19,7 +19,7 @@ jobs:
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@v1
         env:
-          SONAR_TOKEN: ${{ 95525461f2db95c9c42e11425b7c2897c0441463 }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
             -Dsonar.projectKey=trivia-game-python
