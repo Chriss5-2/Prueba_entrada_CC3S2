@@ -20,9 +20,15 @@ jobs:
           pip install -r requirements.txt
           pip install httpx
 
-      - run: |
+      - name: Run tests with coverage
+        run: |
           cd trivia-game-python
-          pytest
+          pytest --cov=app tests/
+
+      - name: Run Security Scan
+        run: |
+          cd trivia-game-python
+          bandit -r
 
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@v2
@@ -30,7 +36,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
-          args: > 
+          args: >
             -Dsonar.projectKey=Chriss5-2_Prueba_entrada_CC3S2
             -Dsonar.organization=chriss5-2
             -Dsonar.sources=.
