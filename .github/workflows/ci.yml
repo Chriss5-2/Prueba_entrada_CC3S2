@@ -32,5 +32,5 @@ jobs:
         with:
           args: > 
             -Dsonar.projectKey=trivia-game-python 
-            -Dsonar.organization = chriss5-2
+            -Dsonar.organization=chriss5-2
             -Dsonar.sources=.
