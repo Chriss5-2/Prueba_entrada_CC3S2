@@ -1,4 +1,10 @@
 from random import *
+from dotenv import load_dotenv
+import os
+
+load_dotev()
+DATABASE_URL = os.getenv("DATABASE_URL")
+SECRET_KEY = os.getnev("SECRET_KEY")
 
 class Question:
     def __init__(self, description, options, correct_answer, level):
