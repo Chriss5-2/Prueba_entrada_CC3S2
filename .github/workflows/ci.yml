@@ -21,6 +21,7 @@ jobs:
           pip install httpx
 
       - run:
+          cd ..
           pytest
 
       - name: SonarQube Scan
