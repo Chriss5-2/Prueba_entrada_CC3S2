@@ -3,7 +3,7 @@ name: Python CI
 
 on:
   push:
-    branches: [develop, main, feature/dia6]
+    branches: [develop, main, feature/dia6, feature/dia7]
 
 jobs:
   build:
