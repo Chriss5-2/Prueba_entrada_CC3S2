@@ -31,6 +31,6 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
           args: > 
-            -Dsonar.projectKey=trivia-game-python 
+            -Dsonar.projectKey=Chriss5-2_Prueba_entrada_CC3S2
             -Dsonar.organization=chriss5-2
             -Dsonar.sources=.
