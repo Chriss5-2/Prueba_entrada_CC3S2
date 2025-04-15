@@ -23,7 +23,7 @@ jobs:
       - name: Run tests with coverage
         run: |
           cd trivia-game-python
-          pytest --cov=app tests/
+          pytest #--cov=app tests/
 
       - name: Run Security Scan
         run: |
