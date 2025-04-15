@@ -21,7 +21,7 @@ jobs:
           pip install httpx
 
       - run:
-          cd ..
+          cd trivia-game-python
           pytest
 
       - name: SonarQube Scan
