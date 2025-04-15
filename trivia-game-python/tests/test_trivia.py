@@ -1,3 +1,4 @@
+# bandit: skip-file
 import pytest
 from app.trivia import Quiz, Question
 
