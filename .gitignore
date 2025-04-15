@@ -1,0 +1,5 @@
+# Create .gitignore
+venv/
+.trivia-game-python/venv/
+__pycache__/
+*.pyc
