@@ -25,6 +25,9 @@ jobs:
           cd trivia-game-python
           pytest #--cov=app tests/
 
+      - name: Install Bandit
+        run: pip install bandit
+
       - name: Run Security Scan
         run: |
           cd trivia-game-python
