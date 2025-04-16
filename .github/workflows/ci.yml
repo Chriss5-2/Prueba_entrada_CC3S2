@@ -31,7 +31,7 @@ jobs:
       - name: Run Security Scan
         run: |
           cd trivia-game-python
-          bandit -r . --exclude trivia-game-python/tests
+          bandit -r --exclude tests
 
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@v2
